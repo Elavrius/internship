@@ -15,7 +15,7 @@ services:
     container_name: postgres_training_container
     image: postgres
     environment:
-      POSTGRES_DB: runtime
+      POSTGRES_DB: internship
       POSTGRES_USER: guest
       POSTGRES_PASSWORD: guest
     volumes:
