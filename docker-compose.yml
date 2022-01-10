@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  rabbitmq:
+    container_name: rabbitmq_training_container
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    labels:
+      NAME: "rabbitmq1"
+
+  postgres:
+    container_name: postgres_training_container
+    image: postgres
+    environment:
+      POSTGRES_DB: runtime
+      POSTGRES_USER: guest
+      POSTGRES_PASSWORD: guest
+    volumes:
+      - ./volumes/postgres/:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    stop_grace_period: 1m
